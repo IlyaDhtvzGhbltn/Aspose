@@ -44,7 +44,7 @@ namespace Code39.EncodingDecoding.Decoding
             for (int charIndx = 0; charIndx < regularText.Length; charIndx++)
             {
                 char @char = regularText[charIndx];
-                bool[] trueFallseArr = Code39Constants.Code39CharSet.First(x => x.Value == @char).Key;
+                bool[] trueFallseArr = Code39Constants.Code39CharSet.FirstOrDefault(x => x.Value == @char).Key;
 
                 for (int flagIndx = 0; flagIndx < trueFallseArr.Length; flagIndx++)
                 {

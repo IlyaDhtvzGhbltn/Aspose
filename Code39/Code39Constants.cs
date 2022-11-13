@@ -48,7 +48,7 @@ namespace Code39
         public static readonly bool[] Z = { true, false, false, false, true, true, true, false, true, true, true, false, true, false, true };
         public static readonly bool[] SPACE = { true, false, false, false, true, true, true, false, true, false, true, true, true, false, true };
 
-        public static Dictionary<bool[], char> Code39CharSet = new Dictionary<bool[], char>(new BoolArrayComparer()) 
+        public static readonly Dictionary<bool[], char> Code39CharSet = new Dictionary<bool[], char>(new BoolArrayComparer()) 
         {
             { Asterisk, '*'},
             { Zero,  '0'},
@@ -91,7 +91,7 @@ namespace Code39
             { SPACE,  ' '},
         };
 
-        public static Dictionary<bool, Color> BlackWhitePixel = new Dictionary<bool, Color>()
+        public static readonly Dictionary<bool, Color> BlackWhitePixel = new Dictionary<bool, Color>()
         {
             { true, Color.FromArgb(0, 0, 0) },
             { false, Color.FromArgb(255, 255, 255) }

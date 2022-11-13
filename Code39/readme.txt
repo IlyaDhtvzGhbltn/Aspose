@@ -7,10 +7,9 @@ https://products.aspose.app/barcode/recognize/code39#/recognized
 cmd examples:
 
 Encoding:
-~bin\Debug>Code39.exe encode -file=hello.jpg
-~bin\Debug>Code39.exe encode -file=Tests\\hello.jpg
-~bin\Debug>Code39.exe encode -file=Tests\\ABCDEFGHIJKLMNOPQRSTUVWXY.jpg
-~bin\Debug>Code39.exe encode -file=Tests\\ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_spaces.jpg
+~bin\Debug>Code39.exe encode -file=BarCodesExamples\\hello.jpg
+~bin\Debug>Code39.exe encode -file=BarCodesExamples\\ABCDEFGHIJKLMNOPQRSTUVWXY.jpg
+~bin\Debug>Code39.exe encode -file=BarCodesExamples\\ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_spaces.jpg
 
 =========================================================================
 Decoding:
