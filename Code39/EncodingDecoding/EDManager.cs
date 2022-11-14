@@ -43,6 +43,8 @@ namespace Code39.ED
                     Code39Decoder decoder = new Code39Decoder(text.Value().ToUpper());
                     Bitmap code39 = decoder.Decode();
                     code39.Save(ouputFile);
+
+                    code39?.Dispose();
                 }
                 else
                 {

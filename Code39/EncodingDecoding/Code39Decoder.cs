@@ -37,26 +37,26 @@ namespace Code39.EncodingDecoding.Decoding
 
             // Any Code39 character contains 15 small lines.
             int width = (regularText.Length * lineBetweenChars * linesInOneChar) + dividesWidth;
-            Bitmap code39 = new Bitmap(width, 1);
-
-
-            int betweenCharsSpace = 0;
-            for (int charIndx = 0; charIndx < regularText.Length; charIndx++)
+            using (var code39 = new Bitmap(width, 1))
             {
-                char @char = regularText[charIndx];
-                bool[] trueFallseArr = Code39Constants.Code39CharSet.FirstOrDefault(x => x.Value == @char).Key;
-
-                for (int flagIndx = 0; flagIndx < trueFallseArr.Length; flagIndx++)
+                int betweenCharsSpace = 0;
+                for (int charIndx = 0; charIndx < regularText.Length; charIndx++)
                 {
-                    var color = Code39Constants.BlackWhitePixel[trueFallseArr[flagIndx]];
-                    for (int pxPos = 0; pxPos < lineBetweenChars; pxPos++)
+                    char @char = regularText[charIndx];
+                    bool[] trueFallseArr = Code39Constants.Code39CharSet.FirstOrDefault(x => x.Value == @char).Key;
+
+                    for (int flagIndx = 0; flagIndx < trueFallseArr.Length; flagIndx++)
                     {
-                        code39.SetPixel((charIndx * linesInOneChar * lineBetweenChars) + flagIndx + pxPos + betweenCharsSpace, 0, color);
+                        var color = Code39Constants.BlackWhitePixel[trueFallseArr[flagIndx]];
+                        for (int pxPos = 0; pxPos < lineBetweenChars; pxPos++)
+                        {
+                            code39.SetPixel((charIndx * linesInOneChar * lineBetweenChars) + flagIndx + pxPos + betweenCharsSpace, 0, color);
+                        }
                     }
+                    betweenCharsSpace += lineBetweenChars;
                 }
-                betweenCharsSpace += lineBetweenChars;
+                return Resize(code39);
             }
-            return Resize(code39);
         }
 
         private void Validate(string decodedText) 

@@ -10,10 +10,11 @@ namespace Code39.Extensions
         {
             var cropArea = new Rectangle(0, b.Height / 2, b.Width, 1);
             Bitmap pixelLine = b.Clone(cropArea, PixelFormat.Format32bppRgb);
+            b?.Dispose();
             return pixelLine;
         }
 
-        public static Bitmap ToGrey(this Bitmap b)
+        public static void ToGrey(this Bitmap b)
         {
             for (int height = 0; height < b.Height; height++)
             {
@@ -24,10 +25,9 @@ namespace Code39.Extensions
                     b.SetPixel(width, height, Color.FromArgb(g, g, g));
                 }
             }
-            return b;
         }        
         
-        public static Bitmap ToBlackOrWhite(this Bitmap b)
+        public static void ToBlackOrWhite(this Bitmap b)
         {
             for (int height = 0; height < b.Height; height++)
             {
@@ -38,7 +38,6 @@ namespace Code39.Extensions
                     b.SetPixel(width, height, Color.FromArgb(blackOrWhite, blackOrWhite, blackOrWhite));
                 }
             }
-            return b;
         }
 
         /// <summary>

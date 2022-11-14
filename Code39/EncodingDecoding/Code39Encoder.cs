@@ -21,12 +21,12 @@ namespace Code39.ED.Encoding
 
             // A 1px high bar contains the all information.
             // No need convert all picture to black and white.
-            bm = bm.ToLine();
+            var line = bm.ToLine();
 
             // Code39 contains only black and white pixels.
             // Convert RGB to black and white.
-            bm = bm.ToGrey();
-            bm = bm.ToBlackOrWhite();
+            line.ToGrey();
+            line.ToBlackOrWhite();
 
             // According the standard Code39 line begins from `*` symbol.
             // The `*` starts with small black line and then big white line after that.
@@ -34,15 +34,15 @@ namespace Code39.ED.Encoding
             // Finding a Code39 line beginning position otherwise throwing exception.
             // Since the `*` always stays at the line first and starts with a black pixel,
             // we are looking for a black pixel first.
-            int startPx = bm.GetBlackPixelIndex();
+            int startPx = line.GetBlackPixelIndex();
 
             // Finding a width of the small and big lines
             // We know that startpx is black, so no need to check it
-            var widthes = bm.GetSmallAndBigLinesWidthPx(startPx + 1);
+            var widthes = line.GetSmallAndBigLinesWidthPx(startPx + 1);
 
             // Any Code39 character could contains only 15 small lines.
             int codeWidth = widthes.smallLineWidth * 15;
-            int codeCount = bm.Width / codeWidth;
+            int codeCount = line.Width / codeWidth;
 
             bool firstAsteriskPresented = false;
             string text = string.Empty;
@@ -52,7 +52,7 @@ namespace Code39.ED.Encoding
                 // Space between Code39 characters equals small string and must be removed
                 int space = i * widthes.smallLineWidth;
                 Rectangle cropArea = new Rectangle(startPx + i * codeWidth + space, 0, codeWidth, 1);
-                Bitmap slice = bm.Clone(cropArea, PixelFormat.Format32bppRgb);
+                Bitmap slice = line.Clone(cropArea, PixelFormat.Format32bppRgb);
 
                 var symbol = new Code39Symbol(widthes.smallLineWidth, widthes.bigLineWidth, slice);
                 char @char = Code39Constants.Code39CharSet[symbol.Pattern];
@@ -76,7 +76,7 @@ namespace Code39.ED.Encoding
                 {
                     text += @char;
                 }
-
+                slice?.Dispose();
             }
 
             return text;
