@@ -1,0 +1,1 @@
+generate -normal=figures.jpg -gaussImg=gaus.jpg -square=256 -noiseValue=100
