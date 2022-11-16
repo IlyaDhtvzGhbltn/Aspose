@@ -24,7 +24,7 @@ namespace FigureGenerator
                     Color.FromArgb(0, 0, 0), 
                     Color.FromArgb(255, 255, 255), 
                     cts));
-                await app.ExecuteAsync(args);
+                await app.ExecuteAsync(args).ConfigureAwait(false);
 
                 ConsoleLoading();
             }
