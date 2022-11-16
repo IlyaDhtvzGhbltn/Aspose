@@ -58,7 +58,6 @@
     <Compile Include="EncodingDecoding\Code39Decoder.cs" />
     <Compile Include="EncodingDecoding\EDManager.cs" />
     <Compile Include="EncodingDecoding\Code39Encoder.cs" />
-    <Compile Include="Extensions\BitmapExtensions.cs" />
     <Compile Include="IO\ConsoleOut.cs" />
     <Compile Include="IO\BitmapOut.cs" />
     <Compile Include="IO\IOutput.cs" />
@@ -99,6 +98,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aspore.Drawing.Extensions\Aspore.Drawing.Extensions.csproj">
+      <Project>{92d4ed47-7f81-4128-9f14-c2a74cab606c}</Project>
+      <Name>Aspore.Drawing.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

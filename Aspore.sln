@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code39", "Code39\Code39.csproj", "{70E78DAD-AA80-42E5-AB76-605B8E47283B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureGenerator", "FigureGenerator\FigureGenerator.csproj", "{AF08250F-97BB-45A8-BBEB-795C6DEB3105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspore.Drawing.Extensions", "Aspore.Drawing.Extensions\Aspore.Drawing.Extensions.csproj", "{92D4ED47-7F81-4128-9F14-C2A74CAB606C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{70E78DAD-AA80-42E5-AB76-605B8E47283B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E78DAD-AA80-42E5-AB76-605B8E47283B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E78DAD-AA80-42E5-AB76-605B8E47283B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF08250F-97BB-45A8-BBEB-795C6DEB3105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF08250F-97BB-45A8-BBEB-795C6DEB3105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF08250F-97BB-45A8-BBEB-795C6DEB3105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF08250F-97BB-45A8-BBEB-795C6DEB3105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D4ED47-7F81-4128-9F14-C2A74CAB606C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D4ED47-7F81-4128-9F14-C2A74CAB606C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D4ED47-7F81-4128-9F14-C2A74CAB606C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D4ED47-7F81-4128-9F14-C2A74CAB606C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

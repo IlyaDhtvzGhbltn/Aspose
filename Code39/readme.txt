@@ -17,3 +17,4 @@ Decoding:
 ~bin\Debug>Code39.exe decode -text=0123456789 -file=decoded.jpg
 ~bin\Debug>Code39.exe decode -text=ABCDEFGHIJKLMNOPQRSTUVWXYZ -file=decoded.jpg
 ~bin\Debug>Code39.exe decode -text="01 23456789 ABCDEFGH IJKLMNOPQRSTUVWXYZ" -file=decoded.jpg
+~bin\Debug>Code39.exe decode -text="low case message" -file=decoded.jpg

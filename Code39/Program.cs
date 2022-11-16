@@ -1,10 +1,7 @@
-﻿using Code39.Extensions;
-using System.Drawing;
-using System;
-using System.IO;
-using System.Drawing.Imaging;
-using McMaster.Extensions.CommandLineUtils;
+﻿using System;
 using Code39.IO;
+using McMaster.Extensions.CommandLineUtils;
+
 
 namespace Code39
 {

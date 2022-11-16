@@ -1,4 +1,4 @@
-﻿using Code39.Extensions;
+﻿using Aspore.Drawing.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -36,7 +36,7 @@ namespace Code39
                 // If current px is first px in small line
                 if (px == 0 || px % SmallLineWidthPx == 0)
                 {
-                    firstPxInSmallLine = BitmapExtensions.IsBlackPixel(bm.GetPixel(px, 0));
+                    firstPxInSmallLine = bm.GetPixel(px, 0).IsBlackPixel();
                     Pattern[line] = firstPxInSmallLine;
                     line += 1;
                 }
@@ -44,7 +44,7 @@ namespace Code39
                 {
                     // If current px isn't first it should be same color as first px within small line.
                     // otherwise throwing exception.
-                    currentPx = BitmapExtensions.IsBlackPixel(bm.GetPixel(px, 0));
+                    currentPx = bm.GetPixel(px, 0).IsBlackPixel();
                     if (currentPx != firstPxInSmallLine)
                     {
                         throw new FormatException("Within a small line all pixels should be the same.");
